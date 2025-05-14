@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head><title>{{ category }} - {{ account }}</title></head>
+<head>
+    <title>{{ category }} - {{ account }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-<h1>{{ category }} - {{ account }}</h1>
-<form method="post">
-    Data: <input type="date" name="data"><br>
-    Descrizione: <input type="text" name="descrizione"><br>
-    Quantità: <input type="number" step="0.01" name="quantita"><br>
-    <input type="submit" value="Aggiungi transazione">
-</form>
-<h2>Transazioni</h2>
-<table border="1">
-<tr><th>Data</th><th>Descrizione</th><th>Quantità</th><th>Saldo</th></tr>
-{% for t in transactions %}
-<tr>
-    <td>{{ t.data }}</td>
-    <td>{{ t.descrizione }}</td>
-    <td>{{ t.quantita }}</td>
-    <td>{{ t.saldo }}</td>
-</tr>
-{% endfor %}
-</table>
-<a href="{{ url_for('view_account', name=account) }}">Torna al conto</a>
+<div class="container">
+    <h1>{{ category }} – {{ account }}</h1>
+
+    <form method="post">
+        <label>Data:</label>
+        <input type="date" name="data" required>
+
+        <label>Descrizione:</label>
+        <input type="text" name="descrizione" required>
+
+        <label>Quantità:</label>
+        <input type="number" step="0.01" name="quantita" required>
+
+        <input type="submit" value="Aggiungi Transazione">
+    </form>
+
+    <h2>Transazioni</h2>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Descrizione</th>
+            <th>Quantità</th>
+            <th>Saldo</th>
+        </tr>
+        {% for t in transactions %}
+        <tr>
+            <td>{{ t.data }}</td>
+            <td>{{ t.descrizione }}</td>
+            <td>{{ t.quantita }}</td>
+            <td>{{ t.saldo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('view_account', name=account) }}">← Torna al conto</a>
+</div>
 </body>
 </html>
