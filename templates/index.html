@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Conti</title></head>
+<body>
+<h1>Conti Bancari</h1>
+<ul>
+{% for account in accounts %}
+    <li><a href="{{ url_for('view_account', name=account) }}">{{ account }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
