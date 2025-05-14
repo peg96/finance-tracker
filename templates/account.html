@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><title>{{ account }}</title></head>
+<head>
+    <title>{{ account }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-<h1>Categorie in {{ account }}</h1>
-<ul>
-{% for category in categories %}
-    <li><a href="{{ url_for('view_category', account=account, category=category) }}">{{ category }}</a></li>
-{% endfor %}
-</ul>
-<a href="{{ url_for('index') }}">Torna ai conti</a>
+<div class="container">
+    <h1>Categorie in {{ account }}</h1>
+    <ul>
+    {% for category in categories %}
+        <li><a href="{{ url_for('view_category', account=account, category=category) }}">{{ category }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">← Torna ai conti</a>
+</div>
 </body>
 </html>
