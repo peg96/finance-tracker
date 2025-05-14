@@ -1,101 +1,62 @@
+/* Font pastello e morbido */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #fefefe;
+    background-color: #fffdf9;
+    color: #444;
     margin: 0;
     padding: 0;
-    color: #444;
 }
 
+/* Container centrale */
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     padding: 20px;
-    background: #fff;
 }
 
+/* Titoli */
 h1, h2 {
-    color: #6c757d;
+    color: #8e8d8a;
     text-align: center;
     font-weight: 600;
-    margin-bottom: 20px;
 }
 
-a {
-    color: #74b9ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-form {
-    margin-bottom: 30px;
-    background: #f1f3f5;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
+/* Input e selezione */
 input, select {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
     font-size: 16px;
-    background: #fff;
+    background: #fffaf4;
 }
 
+/* Bottoni grandi, colori tenui */
 button, input[type="submit"] {
-    background-color: #a29bfe;
-    color: white;
-    padding: 12px;
+    background-color: #a8dadc;
+    color: #1d3557;
+    padding: 16px;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px;
-    transition: 0.3s;
+    font-size: 18px;
+    height: 20vh;
 }
 
 button:hover, input[type="submit"]:hover {
-    background-color: #6c5ce7;
+    background-color: #cce3e5;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background: #fafafa;
-    font-size: 14px;
+/* Due colonne */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
-th, td {
-    padding: 14px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-th {
-    background-color: #dfe6e9;
-    font-weight: 600;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 12px 0;
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+.columns button {
+    width: 48%;
 }
